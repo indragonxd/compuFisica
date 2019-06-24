@@ -10,7 +10,7 @@
             <thead>
               <tr>
                 <th>Dia</th>
-                <th>Consumo</th>
+                <th>Consuo</th>
                 <th>Precio</th>
               </tr>
             </thead>
@@ -35,12 +35,7 @@
 
 
 <script>
-import firebase from "firebase";
-import config from "@/config.js";
 
-let ap = firebase.initializeApp(config);
-let db = ap.database();
-let comsiteRef = db.ref("consumo");
 
 export default {
   name : "about",
@@ -56,9 +51,12 @@ export default {
   created() {
     /*this.app = route.params.ap;
     this.idUser = $route.params.uss;
-    
-    console.log(this.idUser);
     */
+    let db = this.$firebase.database();
+    let comsiteRef = db.ref('users');
+
+    console.log(this.idUser);
+   
     comsiteRef.on("value", snapchat => {
       this.coms = [];
       let valores = snapchat.val();
@@ -71,6 +69,7 @@ export default {
         });
       }
     });
+     
   }
 };
 </script>

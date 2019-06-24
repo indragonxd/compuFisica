@@ -6,6 +6,13 @@ import store from './store'
 
 import {firestorePlugin} from 'vuefire'
 Vue.use(firestorePlugin);
+
+import config from '@/config.js'
+import firebase from 'firebase';
+firebase.initializeApp(config);
+Vue.prototype.$firebase = firebase;
+
+
 Vue.config.productionTip = false
 
 new Vue({
