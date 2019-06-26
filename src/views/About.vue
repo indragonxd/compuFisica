@@ -10,7 +10,7 @@
             <thead>
               <tr>
                 <th>Dia</th>
-                <th>Consuo</th>
+                <th>Consu</th>
                 <th>Precio</th>
               </tr>
             </thead>
